@@ -4,7 +4,7 @@ var movieTexture : MovieTexture;
 
 function Start () {
 
-		GetComponent.<Renderer>().material.mainTexture = movieTexture;
+	GetComponent.<Renderer>().material.mainTexture = movieTexture;
         GetComponent.<Renderer>().material.color = Color.white;
         movieTexture.Play();
         movieTexture.loop = true;

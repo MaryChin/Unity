@@ -14,7 +14,7 @@ function Update () {
 	 var move : float = Input.GetAxis ("Horizontal");
 	 
 	 //Float
-   anim.SetFloat("vv", Mathf.Abs(move));
+	anim.SetFloat("vv", Mathf.Abs(move));
 
 	if(Input.GetKey("right")){
 		transform.Translate(Vector3(0.01,0,0));

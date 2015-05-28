@@ -1,0 +1,40 @@
+#pragma strict
+
+var anim:Animator;
+var jumpForce:float = 100f;	
+
+function Start () {
+
+	anim = GetComponent("Animator");
+
+}
+
+function Update () {
+
+	 var move : float = Input.GetAxis ("Horizontal");
+	 
+	 //Float
+   anim.SetFloat("vv", Mathf.Abs(move));
+
+	if(Input.GetKey("right")){
+		transform.Translate(Vector3(0.01,0,0));
+	}
+	
+	if(Input.GetKey("left")){
+		transform.Translate(Vector3(-0.01,0,0));
+	}
+	
+	//Bool
+	if (Input.GetKey("space")){
+		anim.SetBool("jj",true);
+		rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+	}else{
+		anim.SetBool("jj",false);
+	}
+	
+	//Int
+	//anim.SetInteger("number",10);
+	//Trigger
+	//anim.SetTrigger("name");
+
+}
